@@ -20,14 +20,16 @@ const router = createBrowserRouter(
       errorElement={<ErrorPage />} // <--- Add this here!
     >
       <Route path='' element={<Home />} />
-      <Route path='contact' element={<Contact />} />
-      <Route path='about' element={<About />} />
+      <Route path='/contact' element={<Contact />} />
+      <Route path='/about' element={<About />} />
       <Route 
         loader={gitInfoLoader} 
         path='github' 
         element={<GitHub />} 
       />
-      <Route path='user/:userId' element={<User />} />
+      <Route path='/user' element={<User />} >
+      <Route path=':Id' element={<About />} />
+      </Route>
     </Route>
   )
 )

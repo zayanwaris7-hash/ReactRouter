@@ -13,7 +13,7 @@ export default function Header() {
                             className="mr-3 h-12"
                             alt="FYNSHITS"
                         />
-                        <h2 class="text-2xl font-bold uppercase tracking-[0.2em] text-black">FYNSHITS</h2>
+                        <h2 className="text-2xl font-bold uppercase tracking-[0.2em] text-black">FYNSHITS</h2>
                     </Link>
                     <div className="flex items-center lg:order-2">
                         <Link
@@ -46,7 +46,7 @@ export default function Header() {
                             </li>
                             <li>
                                 <NavLink
-                                to="about"
+                                to="/about"
                                     className={({isActive}) =>
                                         `block py-2 pr-4 pl-3 duration-200 ${isActive ? "text-orange-700" : "text-gray-700"} border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
                                     }
@@ -56,7 +56,7 @@ export default function Header() {
                             </li>
                             <li>
                                 <NavLink
-                                to="contact"
+                                to="/contact"
                                     className={({isActive}) =>
                                         `block py-2 pr-4 pl-3 duration-200 ${isActive ? "text-orange-700" : "text-gray-700"} border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
                                     }
@@ -66,7 +66,7 @@ export default function Header() {
                             </li>
                             <li>
                                 <NavLink
-                                to="github"
+                                to="/github"
                                     className={({isActive}) =>
                                         `block py-2 pr-4 pl-3 duration-200 ${isActive ? "text-orange-700" : "text-gray-700"} border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
                                     }
@@ -76,7 +76,7 @@ export default function Header() {
                             </li>
                             <li>
                                 <NavLink
-                                to="user"
+                                to="/user"
                                     className={({isActive}) =>
                                         `block py-2 pr-4 pl-3 duration-200 ${isActive ? "text-orange-700" : "text-gray-700"} border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
                                     }
