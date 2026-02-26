@@ -9,18 +9,27 @@ import About from './Component/About.jsx'
 import Home from './Component/Home.jsx'
 import GitHub, { gitInfoLoader } from './Component/GitHub.jsx'
 import User from './Component/User.jsx'
+import { useParams } from 'react-router-dom'
+import { ErrorPage } from './Component/Error.jsx'
 
-const router=createBrowserRouter( 
-createRoutesFromElements(
-  <Route path='/' element={<Layout/>} >
-    <Route path='' element={<Home/>}></Route>
-    <Route path='contact' element={<Contact/>}></Route>
-    <Route path='about' element={<About/>}></Route>
-    <Route loader={gitInfoLoader} path='github' element={<GitHub/>}></Route>
-    <Route path='user' element={<User/>}></Route>
-    <Route path='user/:userId' element={<User/>}></Route>
-  </Route>
-)
+const router = createBrowserRouter( 
+  createRoutesFromElements(
+    <Route 
+      path='/' 
+      element={<Layout/>} 
+      errorElement={<ErrorPage />} // <--- Add this here!
+    >
+      <Route path='' element={<Home />} />
+      <Route path='contact' element={<Contact />} />
+      <Route path='about' element={<About />} />
+      <Route 
+        loader={gitInfoLoader} 
+        path='github' 
+        element={<GitHub />} 
+      />
+      <Route path='user/:userId' element={<User />} />
+    </Route>
+  )
 )
 
 createRoot(document.getElementById('root')).render(
