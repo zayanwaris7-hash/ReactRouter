@@ -11,6 +11,8 @@ import GitHub, { gitInfoLoader } from './Component/GitHub.jsx'
 import User from './Component/User.jsx'
 import { useParams } from 'react-router-dom'
 import { ErrorPage } from './Component/Error.jsx'
+import Login from './Component/Login.jsx'
+import Wellcome from './Component/wellcome.jsx'
 
 const router = createBrowserRouter( 
   createRoutesFromElements(
@@ -30,6 +32,8 @@ const router = createBrowserRouter(
       <Route path='/user' element={<User />} >
       <Route path=':Id' element={<About />} />
       </Route>
+       <Route path='/login' element={<Login/>}/>
+       <Route path='/wellcome' element={<Wellcome/>}/>
     </Route>
   )
 )
