@@ -1,6 +1,14 @@
 import React from 'react';
+import { useEffect } from 'react';
+import { useState } from 'react';
+import { useContext } from 'react';
+import {userContext} from '../Context/userContext';
 
-function Wellcome({ userName = "Guest" }) {
+function Wellcome() {
+
+  const { user }=useContext(userContext);
+  const final = user || "Guest";
+
   return (
     <div className="min-h-[60vh] flex items-center justify-center bg-transparent">
       <div className="text-center space-y-6 p-8 rounded-2xl transition-all duration-700 ease-in-out">
@@ -13,7 +21,7 @@ function Wellcome({ userName = "Guest" }) {
         {/* Main Heading */}
         <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight text-slate-900">
           Welcome back, <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600">
-            {userName}
+            {final}
           </span>!
         </h1>
 

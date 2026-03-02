@@ -1,12 +1,20 @@
 import React, { useState } from 'react';
+import Wellcome from './Wellcome';
+import { useNavigate, useNavigation } from 'react-router-dom';
+import { useContext } from 'react';
+import {userContext} from '../Context/userContext';
 
 function Login() {
+  const navigate=useNavigate();
+  const { setuser }=useContext(userContext);
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Logging in with:", { userName, password });
+    setuser(userName);
+    navigate('/wellcome');
   };
 
   return (
@@ -46,11 +54,12 @@ function Login() {
               />
             </div>
           </div>
-
           <div>
             <button
               type="submit"
-              onClick={() => window.location.href = "/wellcome"}
+              onClick={() => {
+                handleSubmit
+              }}
               className="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-semibold rounded-lg text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-colors"
             >
               Sign in

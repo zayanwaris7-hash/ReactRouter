@@ -12,7 +12,8 @@ import User from './Component/User.jsx'
 import { useParams } from 'react-router-dom'
 import { ErrorPage } from './Component/Error.jsx'
 import Login from './Component/Login.jsx'
-import Wellcome from './Component/wellcome.jsx'
+import Wellcome from './Component/Wellcome.jsx'
+import { UserContextProvider } from './Context/userContextProvider.jsx'
 
 const router = createBrowserRouter( 
   createRoutesFromElements(
@@ -40,6 +41,8 @@ const router = createBrowserRouter(
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+    <UserContextProvider>
     <RouterProvider router={router}/>
+    </UserContextProvider>
   </StrictMode>,
 );
