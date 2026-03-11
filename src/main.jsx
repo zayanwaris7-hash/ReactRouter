@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
 import Layout from './Layout/Layout.jsx'
-import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom'
+import { createBrowserRouter, createHashRouter,createRoutesFromElements, Route, RouterProvider } from 'react-router-dom'
 import Contact from './Component/Contact.jsx'
 import About from './Component/About.jsx'
 import Home from './Component/Home.jsx'
@@ -15,7 +15,8 @@ import Login from './Component/Login.jsx'
 import Wellcome from './Component/Wellcome.jsx'
 import { UserContextProvider } from './Context/userContextProvider.jsx'
 
-const router = createBrowserRouter( 
+
+const router = createHashRouter( 
   createRoutesFromElements(
     <Route 
       path='/' 
